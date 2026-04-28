@@ -1,21 +1,102 @@
-# Mohammad Alhajeen â€” Backend Engineer
+Hi, I'm Mohammad Alhajeen
 
-Backend engineer focused on designing production-grade, scalable systems with strong consistency guarantees.
-
-Currently building **[Kawn](https://github.com/mohammadAlhajeen/bun_commerce-public)** â€” a full-stack multi-vendor e-commerce marketplace for the Arab market.  
-Solo developer آ· 215+ REST endpoints آ· 107K+ lines of code آ· Live on VPS
+Java Backend Engineer | Spring Boot · DDD | Building Real Systems
 
 ---
 
-## Tech Stack
+About Me
 
-**Backend** آ· Java 21 آ· Spring Boot آ· Spring Security 6 آ· Hibernate آ· Flyway  
-**Database** آ· PostgreSQL آ· PostGIS آ· Redis آ· Caffeine  
-**Architecture** آ· DDD آ· Modular Monolith آ· Domain Events آ· Soft Reservation Pattern  
-**Auth** آ· JWT آ· OAuth2 آ· Magic Link (OTT)  
-**Frontend** آ· React آ· Next.js آ· Tailwind CSS آ· RTL Arabic  
-**DevOps** آ· Docker آ· Nginx آ· Linux آ· VPS
+I’m a backend engineer focused on building scalable, production-ready systems, not just writing code.
 
+- Strong in Domain-Driven Design (DDD)
+-  Building systems with Spring Boot + PostgreSQL
+-  Focused on performance, caching, and real-world constraints
+-  Currently building a marketplace for the Arab world
+
+---
+
+ What I’m Building
+
+ Kawn (كون)
+
+A marketplace designed for real-world commerce challenges in the Arab region.
+
+Key ideas behind it:
+
+- Real-time inventory handling (Redis + Lua)
+- Smart cart validation engine (Preview vs Reconcile)
+- Flexible pricing & offers system
+- Geospatial delivery pricing (PostGIS)
+- Built with DDD modular architecture
+
+---
+
+ Engineering Mindset
+
+I care about:
+
+- Clean architecture over quick hacks
+- Real-world constraints (not ideal scenarios)
+- System design, not just endpoints
+- Trade-offs and scalability
+
+---
+
+Tech Stack
+
+Backend:
+
+- Java
+- Spring Boot
+- Spring Security (JWT, OAuth2)
+
+Database:
+
+- PostgreSQL
+- PostGIS
+
+Caching & Performance:
+
+- Redis
+- Caffeine
+
+Infrastructure:
+
+- Docker
+- Nginx
+
+---
+
+ Highlight Concepts I Work With
+
+- Cart Validation Engine (self-healing carts)
+- Snapshot-based checkout
+- Soft reservation (Redis TTL)
+- Domain events between bounded contexts
+- Multi-layer caching strategies
+- Media serving via Nginx + backend coordination
+
+---
+
+ Currently Learning / Exploring
+
+- Virtual Threads (Java)
+- GraalVM
+- Advanced system design patterns
+
+---
+
+ Connect With Me
+
+- LinkedIn: https://www.linkedin.com/in/mohamed-alhajeen
+- Portfolio (coming soon…)
+
+---
+
+ Fun Fact
+
+I don’t just build features —
+I build systems that survive real users.
 ---
 
 ## Projects
