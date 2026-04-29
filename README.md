@@ -1,127 +1,129 @@
-Hi, I'm Mohammad Alhajeen
-
-Java Backend Engineer | Spring Boot · DDD | Building Real Systems
-
----
-
-About Me
-
-I’m a backend engineer focused on building scalable, production-ready systems, not just writing code.
-
-- Strong in Domain-Driven Design (DDD)
--  Building systems with Spring Boot + PostgreSQL
--  Focused on performance, caching, and real-world constraints
--  Currently building a marketplace for the Arab world
+# Mohammad Alhajeen
+Java Backend Engineer | Spring Boot · DDD | Building Scalable Systems
 
 ---
 
- What I’m Building
+## Who I Am
 
- Kawn (كون)
+Backend engineer focused on building systems that handle real-world complexity — not just clean code, but correct behavior under load, inconsistency, and scale.
 
-A marketplace designed for real-world commerce challenges in the Arab region.
-
-Key ideas behind it:
-
-- Real-time inventory handling (Redis + Lua)
-- Smart cart validation engine (Preview vs Reconcile)
-- Flexible pricing & offers system
-- Geospatial delivery pricing (PostGIS)
-- Built with DDD modular architecture
+I specialize in designing production-ready backend architectures using Domain-Driven Design and modern Java stack.
 
 ---
 
- Engineering Mindset
+## What I Do
 
-I care about:
-
-- Clean architecture over quick hacks
-- Real-world constraints (not ideal scenarios)
-- System design, not just endpoints
-- Trade-offs and scalability
+- Design scalable backend systems using Spring Boot and PostgreSQL  
+- Apply Domain-Driven Design to model complex business domains  
+- Build high-performance systems using caching and data optimization  
+- Solve real-world engineering problems (not ideal scenarios)  
 
 ---
 
-Tech Stack
+## Core Strengths
 
-Backend:
+- System design and architecture thinking  
+- Strong understanding of data consistency and trade-offs  
+- Performance optimization (multi-layer caching, query tuning)  
+- Designing resilient flows (cart, checkout, order lifecycle)  
 
+---
+
+## Current Focus
+
+### Kawn (كون) — Multi-Vendor Marketplace
+
+Building a marketplace platform tailored for real-world commerce challenges in the Arab region.
+
+Key engineering challenges being solved:
+
+- Real-time inventory consistency using Redis + Lua  
+- Smart cart validation engine (Preview vs Reconcile)  
+- Snapshot-based checkout for consistency guarantees  
+- Flexible pricing and offers system  
+- Geospatial delivery pricing using PostGIS  
+- Modular monolith architecture using Domain-Driven Design  
+
+---
+
+### Suqnna — Graduation Project (Handmade Products Marketplace)
+
+A graduation project focused on enabling small handmade businesses to sell their products through a structured digital platform.
+
+This is not a WhatsApp-based selling tool — it is a full commerce layer designed for real-world usage.
+
+Core capabilities:
+
+- Unified order management system (customer, company)  
+- Built-in wallet system for handling balances and transactions  
+- Flexible payment charge
+- Structured product catalog for handmade goods  
+- Simple, clean UX tailored for non-technical users  
+- Designed to evolve into a scalable marketplace ecosystem  
+
+---
+
+## Tech Stack
+
+### Backend
 - Java
 - Spring Boot
 - Spring Security (JWT, OAuth2)
 
-Database:
-
+### Data & Performance
 - PostgreSQL
-- PostGIS
 
-Caching & Performance:
-
-- Redis
-- Caffeine
-
-Infrastructure:
-
+### Infrastructure
 - Docker
 - Nginx
 
----
 
- Highlight Concepts I Work With
-
-- Cart Validation Engine (self-healing carts)
-- Snapshot-based checkout
-- Soft reservation (Redis TTL)
-- Domain events between bounded contexts
-- Multi-layer caching strategies
-- Media serving via Nginx + backend coordination
-
----
-
- Currently Learning / Exploring
-
-- Virtual Threads (Java)
-- GraalVM
-- Advanced system design patterns
-
----
-
- Connect With Me
-
-- LinkedIn: https://www.linkedin.com/in/mohamed-alhajeen
-- Portfolio (coming soon…)
-
----
-
- Fun Fact
-
-I don’t just build features —
-I build systems that survive real users.
 ---
 
 ## Projects
 
-### [Kawn â€” Multi-Vendor Marketplace](https://github.com/mohammadAlhajeen/bun_commerce-public)
-Full-stack marketplace platform targeting the Palestinian and Arab market.  
-- Cart validation engine (Preview/Reconcile cycle) for real-time price and stock conflict detection  
-- Snapshot-based checkout with Redis Lua atomic soft reservations  
-- Three-tier caching: Caffeine â†’ Redis â†’ PostgreSQL  
-- Domain-driven design with clean aggregate boundaries across 10+ domains  
-- Production deployment: Docker + Nginx on VPS (Ubuntu 24.04)
+### Kawn — Multi-Vendor Marketplace
+https://github.com/mohammadAlhajeen/bun_commerce-public
 
-### [Authentication Service](https://github.com/mohammadAlhajeen/spring_jwt_Oauth2)
-Dedicated identity and auth layer using OAuth2 + JWT.  
-- Stateless JWT with custom claims (device_id, scope, public_id)  
-- Magic Link (OTT) + Guest Checkout via phone number  
-- Secure internal/public UUID mapping with caching
-
-### [Multi-Role Order Management System](https://github.com/mohammadAlhajeen/spring-multi-user-auth-jwt)
-Multi-role backend (Admin, Company, Customer, Driver) with full order lifecycle, RBAC, and role-based state transitions.
+- Real-time cart validation (Preview/Reconcile)
+- Multi-layer caching architecture
+- Domain-driven modular design across multiple domains
+- Production deployment (Docker + Nginx on VPS)
 
 ---
 
-## Currently
+### Authentication Service
+https://github.com/mohammadAlhajeen/spring_jwt_Oauth2
 
-- ًںژ“ B.Sc. Software Engineering â€” University of Palestine (Top of Specialization, 2026)
-- ًں”¨ Shipping Kawn to production
-- ًں“‌ Writing about Java, Spring Boot, and system design on [LinkedIn](https://linkedin.com/in/mohamed-alhajeen-832b6621a/)
+- Stateless JWT with custom claims (device_id, scope, public_id)
+- OAuth2
+- Secure ID mapping (internal ↔ public) with caching
+
+---
+
+### Multi-Role Order Management System
+- Multi-role system (Admin, Company, Customer, Driver)
+- RBAC implementation
+- Order lifecycle with state transitions
+
+---
+
+## Education
+
+B.Sc. Software Engineering — University of Palestine  
+Top of Specialization — 2026  
+
+---
+
+## Connect
+
+- LinkedIn: https://linkedin.com/in/mohamed-alhajeen-832b6621a/
+- Open to backend engineering opportunities
+
+---
+
+## Philosophy
+
+I don’t build features.
+
+I build systems that stay correct under pressure, scale with growth, and survive real users.
