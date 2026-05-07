@@ -1,129 +1,129 @@
 # Mohammad Alhajeen
-Java Backend Engineer | Spring Boot · DDD | Building Scalable Systems
+
+Backend Engineer focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
+
+I enjoy building systems that go beyond CRUD applications — focusing on consistency, domain modeling, backend architecture, and infrastructure-oriented engineering.
 
 ---
 
-## Who I Am
+## What I Work On
 
-Backend engineer focused on building systems that handle real-world complexity — not just clean code, but correct behavior under load, inconsistency, and scale.
-
-I specialize in designing production-ready backend architectures using Domain-Driven Design and modern Java stack.
-
----
-
-## What I Do
-
-- Design scalable backend systems using Spring Boot and PostgreSQL  
-- Apply Domain-Driven Design to model complex business domains  
-- Build high-performance systems using caching and data optimization  
-- Solve real-world engineering problems (not ideal scenarios)  
+* Scalable backend systems
+* Domain-Driven Design (DDD)
+* Authentication & Identity Infrastructure
+* Transactional workflows
+* Distributed consistency patterns
+* Caching strategies
+* E-commerce architecture
+* Production deployment & infrastructure
 
 ---
 
-## Core Strengths
+## Main Projects
 
-- System design and architecture thinking  
-- Strong understanding of data consistency and trade-offs  
-- Performance optimization (multi-layer caching, query tuning)  
-- Designing resilient flows (cart, checkout, order lifecycle)  
+### Kawn — Multi-Vendor Marketplace
 
----
+A production-oriented e-commerce platform built as a solo project.
 
-## Current Focus
+Focused on:
 
-### Kawn (كون) — Multi-Vendor Marketplace
+* modular monolith architecture
+* transactional consistency
+* cart/checkout complexity
+* inventory reservation
+* domain events
+* caching strategies
+* delivery workflows
+* production deployment
 
-Building a marketplace platform tailored for real-world commerce challenges in the Arab region.
-
-Key engineering challenges being solved:
-
-- Real-time inventory consistency using Redis + Lua  
-- Smart cart validation engine (Preview vs Reconcile)  
-- Snapshot-based checkout for consistency guarantees  
-- Flexible pricing and offers system  
-- Geospatial delivery pricing using PostGIS  
-- Modular monolith architecture using Domain-Driven Design  
+Tech:
+Java · Spring Boot · PostgreSQL · Redis · Docker · Nginx · React · Next.js
 
 ---
 
-### Suqnna — Graduation Project (Handmade Products Marketplace)
+### Bun Identity
 
-A graduation project focused on enabling small handmade businesses to sell their products through a structured digital platform.
+Open-source identity infrastructure starter focused on practical authentication workflows and reusable backend security architecture.
 
-This is not a WhatsApp-based selling tool — it is a full commerce layer designed for real-world usage.
+Features:
 
-Core capabilities:
-
-- Unified order management system (customer, company)  
-- Built-in wallet system for handling balances and transactions  
-- Flexible payment charge
-- Structured product catalog for handmade goods  
-- Simple, clean UX tailored for non-technical users  
-- Designed to evolve into a scalable marketplace ecosystem  
+* JWT authentication
+* OAuth2 login
+* refresh token rotation
+* guest sessions
+* rate limiting
+* UUID-based identity mapping
 
 ---
 
 ## Tech Stack
 
 ### Backend
-- Java
-- Spring Boot
-- Spring Security (JWT, OAuth2)
 
-### Data & Performance
-- PostgreSQL
+* Java 21–25
+* Spring Boot
+* Spring Security
+* Hibernate / JPA
+* Flyway
 
-### Infrastructure
-- Docker
-- Nginx
+### Database & Infrastructure
 
+* PostgreSQL
+* Redis
+* PostGIS
+* Docker
+* Nginx
+* Linux
 
----
+### Architecture
 
-## Projects
+* Domain-Driven Design (DDD)
+* Modular Monolith
+* Domain Events
+* Transactional Modeling
+* Soft Reservation Patterns
+* Multi-Layer Caching
 
-### Kawn — Multi-Vendor Marketplace
-https://github.com/mohammadAlhajeen/bun_commerce-public
+### Frontend
 
-- Real-time cart validation (Preview/Reconcile)
-- Multi-layer caching architecture
-- Domain-driven modular design across multiple domains
-- Production deployment (Docker + Nginx on VPS)
-
----
-
-### Authentication Service
-https://github.com/mohammadAlhajeen/spring_jwt_Oauth2
-
-- Stateless JWT with custom claims (device_id, scope, public_id)
-- OAuth2
-- Secure ID mapping (internal ↔ public) with caching
+* React
+* Next.js
+* Tailwind CSS
 
 ---
 
-### Multi-Role Order Management System
-- Multi-role system (Admin, Company, Customer, Driver)
-- RBAC implementation
-- Order lifecycle with state transitions
+## Engineering Interests
 
----
+I’m particularly interested in:
 
-## Education
-
-B.Sc. Software Engineering — University of Palestine  
-Top of Specialization — 2026  
-
----
-
-## Connect
-
-- LinkedIn: https://linkedin.com/in/mohamed-alhajeen-832b6621a/
-- Open to backend engineering opportunities
+* backend architecture
+* transactional consistency
+* identity systems
+* scalable commerce systems
+* distributed workflows
+* performance engineering
+* real-world backend edge cases
 
 ---
 
 ## Philosophy
 
-I don’t build features.
+I believe backend engineering is not about writing endpoints.
 
-I build systems that stay correct under pressure, scale with growth, and survive real users.
+It’s about:
+
+* designing correct systems
+* understanding trade-offs
+* handling real-world edge cases
+* building maintainable architecture
+* thinking beyond frameworks
+
+---
+
+## Connect With Me
+
+LinkedIn:
+https://linkedin.com/in/mohamed-alhajeen-832b6621a/
+
+GitHub:
+https://github.com/mohammadAlhajeen
