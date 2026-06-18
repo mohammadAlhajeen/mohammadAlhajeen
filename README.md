@@ -1,8 +1,8 @@
 # Mohammad Alhajeen
 
-Backend Engineer focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
+**Backend Engineer** — focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
 
-I enjoy building systems that go beyond CRUD applications — focusing on consistency, domain modeling, backend architecture, and infrastructure-oriented engineering.
+I enjoy building systems that go beyond CRUD — focusing on consistency, domain modeling, backend architecture, and infrastructure-oriented engineering.
 
 ---
 
@@ -10,9 +10,9 @@ I enjoy building systems that go beyond CRUD applications — focusing on consis
 
 * Scalable backend systems
 * Domain-Driven Design (DDD)
-* Authentication & Identity Infrastructure
-* Transactional workflows
-* Distributed consistency patterns
+* Authentication & identity infrastructure
+* Transactional workflows & concurrency
+* Consistency under real-world edge cases (price drift, stale data, race conditions)
 * Caching strategies
 * E-commerce architecture
 * Production deployment & infrastructure
@@ -21,96 +21,66 @@ I enjoy building systems that go beyond CRUD applications — focusing on consis
 
 ## Main Projects
 
-### Kawn — Multi-Vendor Marketplace
+### Kawn — Multi-Vendor E-Commerce Marketplace
+**[Architecture docs →](https://github.com/mohammadAlhajeen/bun_commerce-public)** · *source private*
 
-A production-oriented e-commerce platform built as a solo project.
+A production-oriented marketplace built solo — 215+ REST endpoints, 107K+ LOC — and deployed to production.
 
-Focused on:
+* modular monolith with microservice-ready domain boundaries
+* variant-first catalog model (persists only purchasable variants — no Cartesian-product explosion)
+* cart validation engine with price-drift and stock reconciliation
+* snapshot-based checkout with atomic, database-level inventory reservation
+* domain events for cross-domain consistency without tight coupling
+* bilingual (Arabic / English) PostgreSQL full-text search
+* standardized read model with a Caffeine cache and event-driven eviction
+* delivery workflows and PostGIS geospatial addressing
 
-* modular monolith architecture
-* transactional consistency
-* cart/checkout complexity
-* inventory reservation
-* domain events
-* caching strategies
-* delivery workflows
-* production deployment
-
-Tech:
-Java · Spring Boot · PostgreSQL · Redis · Docker · Nginx · React · Next.js
+**Tech:** Java · Spring Boot · PostgreSQL · PostGIS · Caffeine · Flyway · Docker · Nginx · React · Next.js
 
 ---
 
-### Bun Identity
+### Sooqna — Handmade Marketplace (Graduation Project)
+**[Public repo →](https://github.com/mohammadAlhajeen/suqnna-public)**
 
-Open-source identity infrastructure starter focused on practical authentication workflows and reusable backend security architecture.
+A multi-tenant marketplace for the handmade economy, built with a five-person team — I led backend architecture and deployment.
 
-Features:
+* multi-tenant backend: 100+ seller companies with strict data isolation
+* wallet / escrow with deposit-hold logic for pre-order flows
+* in-stock and pre-order product types, each with its own lifecycle
+* Arabic full-text search (tsvector + GIN) and JSONB attribute modeling
+* load-validated with Apache JMeter at 300 concurrent users — search ~145 ms (p95 280 ms), order creation ~234 ms
 
-* JWT authentication
-* OAuth2 login
-* refresh token rotation
-* guest sessions
-* rate limiting
-* UUID-based identity mapping
+**Tech:** Java · Spring Boot · PostgreSQL · React · Docker · Nginx · AWS S3
+
+---
+
+### Bun Identity — Spring Boot Identity Starter (Open Source)
+**[Repo →](https://github.com/mohammadAlhajeen/bun-identity)**
+
+An identity starter for developers who want full ownership of their auth layer without adopting a heavy IAM product.
+
+* JWT authentication and OAuth2 login
+* opaque refresh tokens with rotation
+* guest sessions and device-aware flows
+* UUID-based public / internal identity mapping
+* rate limiting and a full documentation suite
+
+**Tech:** Java · Spring Boot · Spring Security · PostgreSQL · Flyway · Docker
 
 ---
 
 ## Tech Stack
 
-### Backend
-
-* Java 21–25
-* Spring Boot
-* Spring Security
-* Hibernate / JPA
-* Flyway
-
-### Database & Infrastructure
-
-* PostgreSQL
-* Redis
-* PostGIS
-* Docker
-* Nginx
-* Linux
-
-### Architecture
-
-* Domain-Driven Design (DDD)
-* Modular Monolith
-* Domain Events
-* Transactional Modeling
-* Soft Reservation Patterns
-* Multi-Layer Caching
-
-### Frontend
-
-* React
-* Next.js
-* Tailwind CSS
-
----
-
-## Engineering Interests
-
-I’m particularly interested in:
-
-* backend architecture
-* transactional consistency
-* identity systems
-* scalable commerce systems
-* distributed workflows
-* performance engineering
-* real-world backend edge cases
+**Backend** — Java 21–25 · Spring Boot · Spring Security · Hibernate / JPA · Flyway
+**Database & Infrastructure** — PostgreSQL · PostGIS · Caffeine · Redis · Docker · Nginx · Linux
+**Architecture** — Domain-Driven Design · Modular Monolith · Domain Events · Transactional Modeling · Database-Level Inventory Reservation · Read-Model Caching
+**Frontend** — React · Next.js · Tailwind CSS
 
 ---
 
 ## Philosophy
 
-I believe backend engineering is not about writing endpoints.
-
-It’s about:
+Backend engineering isn't about writing endpoints. It's about:
 
 * designing correct systems
 * understanding trade-offs
@@ -120,10 +90,8 @@ It’s about:
 
 ---
 
-## Connect With Me
+## Connect
 
-LinkedIn:
-https://linkedin.com/in/mohamed-alhajeen-832b6621a/
-
-GitHub:
-https://github.com/mohammadAlhajeen
+* **LinkedIn** — https://linkedin.com/in/mohamed-alhajeen
+* **GitHub** — https://github.com/mohammadAlhajeen
+* **Email** — hajeen595@gmail.com
