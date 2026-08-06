@@ -1,6 +1,6 @@
 # Mohammad Alhajeen
 
-**Backend Engineer**" focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
+**Backend Engineer** focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
 
 I enjoy building systems that go beyond CRUD  focusing on consistency, domain modeling, backend architecture, and infrastructure-oriented engineering.
 
