@@ -1,97 +1,88 @@
 # Mohammad Alhajeen
 
-**Backend Engineer** focused on scalable backend systems, production-oriented architecture, and real-world transactional workflows.
+**Backend Engineer** · Java · Spring Boot · PostgreSQL
 
-I enjoy building systems that go beyond CRUD  focusing on consistency, domain modeling, backend architecture, and infrastructure-oriented engineering.
+I build and run production systems end to end: architecture, data modeling, deployment, and infrastructure.
 
----
+Most of my work sits in transactional systems where correctness under concurrency matters more than feature count.
 
-## What I Work On
+## What I work on
 
-* Scalable backend systems
-* Domain-Driven Design (DDD)
-* Authentication & identity infrastructure
-* Transactional workflows & concurrency
-* Consistency under real-world edge cases (price drift, stale data, race conditions)
-* Caching strategies
-* E-commerce architecture
-* Production deployment & infrastructure
+* Transactional workflows and concurrency
+* Domain-Driven Design and modular architecture
+* PostgreSQL data modeling, indexing, and query performance
+* Authentication and identity infrastructure
+* Caching strategies and read-model design
+* Production deployment, CI/CD, and infrastructure
 
----
+## Main projects
 
-## Main Projects
+### Kawn: Multi-Vendor E-Commerce Marketplace
 
-### Kawn , Multi-Vendor E-Commerce Marketplace
-**[Architecture docs →](https://github.com/mohammadAlhajeen/bun_commerce-public)** · *source private*
+**[Live site](https://kawn.shop)** · **[Architecture docs](https://github.com/mohammadAlhajeen/bun_commerce-public)**
 
-A production-oriented marketplace built solo , 215+ REST endpoints, 107K+ LOC , and deployed to production.
+Built solo. Source private, architecture fully documented in the public repo.
 
-* modular monolith with microservice-ready domain boundaries
-* variant-first catalog model (persists only purchasable variants , no Cartesian-product explosion)
-* cart validation engine with price-drift and stock reconciliation
-* snapshot-based checkout with atomic, database-level inventory reservation
-* domain events for cross-domain consistency without tight coupling
-* bilingual (Arabic / English) PostgreSQL full-text search
-* standardized read model with a Caffeine cache and event-driven eviction
-* delivery workflows and PostGIS geospatial addressing
+A modular monolith of 15 domain modules exposing 215+ REST endpoints, with microservice-ready domain boundaries.
 
-**Tech:** Java · Spring Boot · PostgreSQL · PostGIS · Caffeine · Flyway · Docker · Nginx · React · Next.js
+* Variant-first catalog with category-driven attribute inheritance over a hierarchical taxonomy (recursive CTEs), supporting tracked and on-demand inventory and faceted filtering without Cartesian-product explosion.
+* Cart Preview/Reconcile engine that detects and repairs price drift and stock conflicts before checkout, feeding a snapshot-based checkout with an atomic reserve/consume/release/commit inventory protocol. The protocol is implemented as conditional single-statement updates guarded at the database, which prevents overselling without application-level locks or optimistic versioning. Order lifecycle modeled with domain events.
+* Bilingual Arabic/English full-text search over PostgreSQL generated tsvector columns, GIN indexes, and ts_rank relevance ranking, behind one global endpoint returning products and stores from decoupled modules.
+* One ProductCard read model reused across listing, search, collections, homepage, and store pages, hydrated through Caffeine with independent cache boundaries per read model and event-driven post-commit eviction.
+* Plan-based subscriptions with upgrade, scheduled downgrade, renewal, grace period, automatic free-plan fallback, and pre-action quota enforcement.
+* PostGIS geospatial addressing built from official government address data parsed into Flyway migrations, powering delivery routing and location-aware product discovery.
+* Public-UUID to internal-ID identity mapping for multi-role auth, JWT with opaque refresh-token rotation, OAuth2 social login, optimistic locking, soft deletes, and role-segmented REST APIs.
 
----
+**Testing:** integration-tested with Testcontainers against real PostgreSQL, running 101 concurrent reservations against 100 units of stock and asserting no oversell. Load-tested with JMeter using a weighted traffic mix over a seeded dataset of 7,200 products, 14,430 variants, and 122 stores: 1,100+ req/s at ~126 ms mean, p95 ~150 ms, zero errors.
 
-### Sooqna : Handmade Marketplace (Graduation Project)
-**[Public repo →](https://github.com/mohammadAlhajeen/suqnna-public)**
+**Deployment:** AWS EC2 behind a hardened Nginx and SSL reverse proxy on Ubuntu 24.04. GitHub Actions runs the test suite as a release gate, builds and publishes the Docker image to GHCR, then triggers deployment via AWS Systems Manager Run Command with Docker Compose. Production secrets stay on the host, so neither the image nor the pipeline carries credentials.
 
-A multi-tenant marketplace for the handmade economy, built with a five-person team , I led backend architecture and deployment.
+**Stack:** Java 21+ · Spring Boot · PostgreSQL · PostGIS · Caffeine · Flyway · Docker · Nginx · AWS
 
-* multi-tenant backend: 100+ seller companies with strict data isolation
-* wallet / escrow with deposit-hold logic for pre-order flows
-* in-stock and pre-order product types, each with its own lifecycle
-* Arabic full-text search (tsvector + GIN) and JSONB attribute modeling
-* load-validated with Apache JMeter at 300 concurrent users , search ~145 ms (p95 280 ms), order creation ~234 ms
+### Sooqna: Handmade Marketplace
 
-**Tech:** Java · Spring Boot · PostgreSQL · React · Docker · Nginx · AWS S3
+**[Repo](https://github.com/mohammadAlhajeen/suqnna-public)**
 
----
+Graduation project, University of Palestine. Built by a five-person Agile team under Dr. Sameh Abu Hassira. I led backend architecture, schema design, and production deployment.
 
-### Bun Identity : Spring Boot Identity Starter (Open Source)
-**[Repo →](https://github.com/mohammadAlhajeen/bun-identity)**
+* Wallet/escrow system with deposit-hold before order confirmation, supporting both full-payment and deposit-based pre-order flows with financial traceability through transaction logs.
+* Two product types, in-stock and pre-order, each with its own lifecycle, inventory logic, and payment path, reflecting the variable timelines and limited quantities of artisan production.
+* Multi-tenant backend supporting 100+ seller companies with strict data isolation enforced through company-scoped access patterns and service-level tenant boundaries. Each seller gets a public storefront with structured sections, custom slugs, and theme management.
+* Schema design with JSONB attribute and shipping payloads and performance-oriented indexes on high-traffic queries. Arabic full-text search over tsvector and GIN.
+* Functional and security testing with JUnit, Mockito, and Postman.
 
-An identity starter for developers who want full ownership of their auth layer without adopting a heavy IAM product.
+**Stack:** Java · Spring Boot · PostgreSQL · React.js · Docker · Nginx · AWS S3
 
-* JWT authentication and OAuth2 login
-* opaque refresh tokens with rotation
-* guest sessions and device-aware flows
-* UUID-based public / internal identity mapping
-* rate limiting and a full documentation suite
+### Bun Identity: Spring Boot Identity Starter
 
-**Tech:** Java · Spring Boot · Spring Security · PostgreSQL · Flyway · Docker
+**[Repo](https://github.com/mohammadAlhajeen/bun-identity)**
 
----
+Open source. An identity starter for teams that want to keep their auth layer in-house without adopting a heavy IAM product.
 
-## Tech Stack
+* JWT authentication with opaque refresh tokens stored as SHA-256 hashes and rotated on every use. Reuse detection revokes the user's entire token family and locks the account on replay.
+* Device-aware sessions with typed revocation reasons, enabling per-device logout.
+* OAuth2 social login and guest sessions.
+* Caffeine-backed rate limiting on public endpoints.
+* Architecture guardrail tests enforcing layering and keeping project-specific code out of the starter.
+* Full documentation suite.
 
-**Backend** : Java 21–25 · Spring Boot · Spring Security · Hibernate / JPA · Flyway
-**Database & Infrastructure** : PostgreSQL · PostGIS · Caffeine · Redis · Docker · Nginx · Linux
-**Architecture** : Domain-Driven Design · Modular Monolith · Domain Events · Transactional Modeling · Database-Level Inventory Reservation · Read-Model Caching
-**Frontend** : React · Next.js · Tailwind CSS
+**Stack:** Spring Boot 4 · Java 21 · Spring Security · PostgreSQL · Flyway · Docker
 
----
+## Tech stack
 
-## Philosophy
+**Languages and backend:** Java 21+, SQL · Spring Boot, Spring Security, Spring Data JPA, Hibernate, Flyway
 
-Backend engineering isn't about writing endpoints. It's about:
+**Data:** PostgreSQL, PostGIS, MySQL · Caffeine
 
-* designing correct systems
-* understanding trade-offs
-* handling real-world edge cases
-* building maintainable architecture
-* thinking beyond frameworks
+**Architecture and API:** Modular Monolith, Domain-Driven Design, Domain Events, Optimistic Locking · REST, JWT, OAuth2, Swagger/OpenAPI
 
----
+**Testing:** JUnit, Mockito, Testcontainers, JMeter, Postman
 
-## Connect
+**Ops and CI/CD:** Docker, Docker Compose, GitHub Actions, GHCR, AWS (EC2, Systems Manager), Nginx, Linux, VPS setup and security hardening
 
-* **LinkedIn** : https://linkedin.com/in/mohamed-alhajeen
-* **GitHub** : https://github.com/mohammadAlhajeen
-* **Email** : hajeen595@gmail.com
+**Frontend familiarity:** React, Next.js, TypeScript
+
+## Contact
+
+* LinkedIn: [in/mohamed-alhajeen](https://linkedin.com/in/mohamed-alhajeen)
+* Email: hajeen595@gmail.com
